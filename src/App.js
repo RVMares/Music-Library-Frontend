@@ -11,20 +11,25 @@ function App() {
 
   useEffect(() => {
     getAllSongs();
-    console.log('Hello World');
-  }, [])
+  }, []);
 
-  async function getAllSongs(){
-    const response = await axios.get('http://127.0.0.1:8000/api/music/');
-    console.log(response);
-    setSongs(response.data)
+  const getAllSongs = async () => {
+    let response = await axios
+    .get('http://127.0.0.1:8000/api/music/')
+    .then(response=>{setSongs(response.data)});
+    console.log(response)
   }
 
-  async function addNewSong (song){
-    const response = await axios.post('http://127.0.0.1:8000/api/music/')
-    let tempSongs = [...songs, song];
-    console.log(response)
-    setSongs(tempSongs);
+  async function addNewSong(newSong){
+    try {
+      let response = await axios
+      .post('http://127.0.0.1:8000/api/music/', newSong);
+      if (response.status === 201){
+        await getAllSongs();
+      }
+    } catch (error){
+      console.log(error.message);
+    }
   }
 
   return (

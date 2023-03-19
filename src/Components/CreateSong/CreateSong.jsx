@@ -25,27 +25,27 @@ const CreateSong = (props) => {
         <form onSubmit={handleSubmit}>
             <div className='form-row'>
                 <div className='form-group col-md-6'>
-                    <label for='songTitle'>Title</label>
+                    <label>Title</label>
                     <input type='text' className='form-control' id='songTitle' value={songTitle} onChange={(event) => setTitle(event.target.value)}/>
                 </div>
                 <div className='form-group col-md-6'>
-                    <label for='songArtist'>Artist</label>
+                    <label>Artist</label>
                     <input type='text' className='form-control' id='songArtist' value={songArtist} onChange={(event) => setArtist(event.target.value)}/>
                 </div>
             </div>
             <div className='form-row'>
                 <div className='form-group col-md-6'>
-                    <label for='songAlbum'>Album</label>
+                    <label>Album</label>
                     <input type='text' className='form-control' id='songAlbum' value={songAlbum} onChange={(event) => setAlbum(event.target.value)}/>
                 </div>
                 <div className='form-group col-md-6'>
-                    <label for='songReleaseDate'>Release Date</label>
+                    <label>Release Date</label>
                     <input type='date' className='form-control' id='songReleaseDate' value={songReleaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
                 </div>
             </div>
             <div className='form-row'>
                 <div className='form-group col-md-6'>
-                    <label for='songGenre'>Genre</label>
+                    <label>Genre</label>
                     <input type='text' className='form-control' id='songGenre' value={songGenre} onChange={(event) => setGenre(event.target.value)}/>
                 </div>
                 <div className='form-group col-md-6'>

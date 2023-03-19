@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 
 const DisplayMusic = (props) => {
     return ( 
-        <table className='table'>
+        <table className="table">
             <thead>
                 <tr>
                     <th scope='col'>Title</th>
@@ -13,19 +12,17 @@ const DisplayMusic = (props) => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    {props.parentSongs.map((song, index) =>{
-                        return(
-                            <tr key={index}>
-                                <td>{song.title}</td>
-                                <td>{song.artist}</td>
-                                <td>{song.album}</td>
-                                <td>{song.release_date}</td>
-                                <td>{song.genre}</td>
-                            </tr>
-                            )
-                    })}
-                </tr>
+                {props.parentSongs.map((song, index) =>{
+                    return(
+                        <tr key={index}>
+                            <td>{song.title}</td>
+                            <td>{song.artist}</td>
+                            <td>{song.album}</td>
+                            <td>{song.release_date}</td>
+                            <td>{song.genre}</td>
+                        </tr>
+                        )
+                })}
             </tbody>
         </table>
      );
