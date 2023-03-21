@@ -11,7 +11,7 @@ const SearchBar = (props) => {
         };
         console.log(filterValue);
 
-        props.filterSongsByValue(filterValue);
+        props.filterValue(filterValue);
     }
 
 

@@ -34,22 +34,11 @@ function App() {
     }
   }
   
-  const filterSongs =async () => {
-    try{
-    let response = await axios
-    .get('http://127.0.0.1:8000/api/music/');
-    if (songs.title.toLowerCase().includes(filterValue.toLowerCase()) ||
-    songs.artist.toLowerCase().includes(filterValue.toLowerCase()) ||
-    songs.album.toLowerCase().includes(filterValue.toLowerCase()) ||
-    songs.release_date.toString().toLowerCase().includes(filterValue.toString().toLowerCase()) ||
-    songs.genre.toLowerCase().includes(filterValue.toLowerCase())){
-    setFilteredSongs(response);
-    }
-    }catch(error){
-      console.log(error.message)
-    }
-    
-  }
+  function filterSongs() {
+    let filteredSongs =
+    this.songs.filter(song => song.toLowerCase().includes(this.filterValue.toLowerCase()));
+    filteredSongs(filteredSongs);
+}
   
 
   return (
@@ -64,13 +53,10 @@ function App() {
       </div>
       <div className='container'>
         <div className='border-box'>
-          <SearchBar filterSongsByValue={filterSongs}/>
+          <SearchBar filterValue={filterSongs}/>
         </div>
         <div className='border-box'>
           <DisplayMusic parentSongs={songs}/>
-          {filteredSongs.map((song, index) => (
-            <DisplayMusic />
-          ))}
         </div>
       </div>
     </div>
