@@ -14,11 +14,11 @@ const CreateSong = (props) => {
             title: songTitle,
             artist: songArtist,
             album: songAlbum,
-            releaseDate: songReleaseDate,
+            release_date: songReleaseDate,
             genre: songGenre
         };
         console.log(newSong);
-        props.createNewSong(newSong)
+        props.createNewSong(newSong);
     }
 
     return ( 

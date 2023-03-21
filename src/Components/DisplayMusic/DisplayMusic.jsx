@@ -7,7 +7,7 @@ const DisplayMusic = (props) => {
                     <th scope='col'>Title</th>
                     <th scope='col'>Artist</th>
                     <th scope='col'>Album</th>
-                    <th scope='col'>Realease Date</th>
+                    <th scope='col'>Release Date</th>
                     <th scope='col'>Genre</th>
                 </tr>
             </thead>
