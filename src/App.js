@@ -8,17 +8,8 @@ import SearchBar from './Components/SearchBar/SearchBar'
 
 function App() {
 
-  const [songs, setSongs] = useState([
-    {
-      title: 'When It Rains It Pours',
-      artist: 'Luke Combs',
-      album: 'This One\'s For You',
-      release_date: '2019-06-19',
-      genre: 'Country'
-
-    }
-  ]);
-  const [searchInput, setSearchInput] = useState('');
+  const [songs, setSongs] = useState([]);
+  const [filteredSongs, setFilteredSongs] = useState([]);
 
   useEffect(() => {
     getAllSongs();
@@ -30,7 +21,7 @@ function App() {
     .then(response=>{setSongs(response.data)});
     console.log(response);
   }
-
+  
   async function addNewSong(newSong){
     try {
       let response = await axios
@@ -42,29 +33,24 @@ function App() {
       console.log(error.message);
     }
   }
-
- async function filterSongByTerm () {
-  try{
+  
+  const filterSongs =async () => {
+    try{
     let response = await axios
-    .get('http://127.0.0.1:8000/api/music/')
-    .then(response=>setSearchInput(response.data));
-    console.log(response)
-    if (!searchInput) {
-      getAllSongs();
+    .get('http://127.0.0.1:8000/api/music/');
+    if (songs.title.toLowerCase().includes(filterValue.toLowerCase()) ||
+    songs.artist.toLowerCase().includes(filterValue.toLowerCase()) ||
+    songs.album.toLowerCase().includes(filterValue.toLowerCase()) ||
+    songs.release_date.toString().toLowerCase().includes(filterValue.toString().toLowerCase()) ||
+    songs.genre.toLowerCase().includes(filterValue.toLowerCase())){
+    setFilteredSongs(response);
     }
-    songs.filter((song) =>{
-      return (
-        song.title.toLowerCase().includes(searchInput.toLowerCase()) ||
-        song.artist.toLowerCase().includes(searchInput.toLowerCase()) ||
-        song.album.toLowerCase().includes(searchInput.toLowerCase()) ||
-        song.release_date.includes(searchInput) ||
-        song.genre.toLowerCase().includes(searchInput.toLowerCase()));
-      })
-  }
-  catch (error){
+    }catch(error){
       console.log(error.message)
     }
+    
   }
+  
 
   return (
     <div className="App">
@@ -78,10 +64,13 @@ function App() {
       </div>
       <div className='container'>
         <div className='border-box'>
-          <SearchBar filterSongsByValue={filterSongByTerm}/>
+          <SearchBar filterSongsByValue={filterSongs}/>
         </div>
         <div className='border-box'>
           <DisplayMusic parentSongs={songs}/>
+          {filteredSongs.map((song, index) => (
+            <DisplayMusic />
+          ))}
         </div>
       </div>
     </div>

@@ -14,6 +14,7 @@ const SearchBar = (props) => {
         props.filterSongsByValue(filterValue);
     }
 
+
     return ( 
         <form onSubmit={handleSubmit}>
             <div className="form-group">
