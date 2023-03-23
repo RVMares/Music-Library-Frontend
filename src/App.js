@@ -9,10 +9,10 @@ import SearchBar from './Components/SearchBar/SearchBar'
 function App() {
 
   const [songs, setSongs] = useState([]);
-  const [filteredSongs, setFilteredSongs] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
-    getAllSongs();
+    getAllSongs()
   }, []);
 
   const getAllSongs = async () => {
@@ -33,13 +33,6 @@ function App() {
       console.log(error.message);
     }
   }
-  
-  function filterSongs() {
-    let filteredSongs =
-    this.songs.filter(song => song.toLowerCase().includes(this.filterValue.toLowerCase()));
-    filteredSongs(filteredSongs);
-}
-  
 
   return (
     <div className="App">
@@ -53,7 +46,7 @@ function App() {
       </div>
       <div className='container'>
         <div className='border-box'>
-          <SearchBar filterValue={filterSongs}/>
+          <SearchBar searchInput={searchInput} setSearchInput={setSearchInput}/>
         </div>
         <div className='border-box'>
           <DisplayMusic parentSongs={songs}/>

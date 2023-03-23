@@ -1,25 +1,10 @@
-import React, { useState } from 'react';
-
-const SearchBar = (props) => {
+const SearchBar = (searchInput, setSearchInput) => {
     
-    const [searchInput, setSearchInput] = useState('');
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        let filterValue = {
-            searchInput: searchInput
-        };
-        console.log(filterValue);
-
-        props.filterValue(filterValue);
-    }
-
-
     return ( 
-        <form onSubmit={handleSubmit}>
+        <form>
             <div className="form-group">
                 <label>Search Here!</label>
-                <input type="text" className="form-control" value={searchInput} onChange={(event) => setSearchInput(event.target.value)} />
+                <input type="text" className="form-control" value={searchInput} onSubmit={(event) => setSearchInput(event.target.value)} />
             </div>
             <button type="submit" className="btn btn-primary" >Filter</button>
         </form>

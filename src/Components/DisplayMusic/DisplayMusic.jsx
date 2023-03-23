@@ -1,5 +1,7 @@
+import Song from "../Song/Song";
 
 const DisplayMusic = (props) => {
+
     return ( 
         <table className="table">
             <thead>
@@ -12,15 +14,17 @@ const DisplayMusic = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.parentSongs.map((song, index) =>{
+                {props.parentSongs
+                .filter(song => (
+                    song.title.toLowerCase().includes(props.searchInput.toLowerCase()) ||
+                    song.artist.toLowerCase().includes(props.searchInput.toLowerCase()) ||
+                    song.album.toLowerCase().includes(props.searchInput.toLowerCase()) ||
+                    song.release_date.includes(props.searchInput) ||
+                    song.genre.toLowerCase().includes(props.searchInput.toLowerCase())
+                    ))
+                .map((song) =>{
                     return(
-                        <tr key={index}>
-                            <td>{song.title}</td>
-                            <td>{song.artist}</td>
-                            <td>{song.album}</td>
-                            <td>{song.release_date}</td>
-                            <td>{song.genre}</td>
-                        </tr>
+                        <Song song={song} />
                         )
                 })}
             </tbody>
