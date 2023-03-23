@@ -1,34 +1,35 @@
 import Song from "../Song/Song";
+import './DisplayMusic.css'
 
 const DisplayMusic = (props) => {
 
     return ( 
-        <table className="table">
-            <thead>
-                <tr>
-                    <th scope='col'>Title</th>
-                    <th scope='col'>Artist</th>
-                    <th scope='col'>Album</th>
-                    <th scope='col'>Release Date</th>
-                    <th scope='col'>Genre</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div className="container-fluid">
+            <div className="rowTitle">
+                    <div className='col'>Title</div>
+                    <div className='col'>Artist</div>
+                    <div className='col'>Album</div>
+                    <div className='col'>Release Date</div>
+                    <div className='col'>Genre</div>
+            </div>
+            <div className="row">
                 {props.parentSongs
-                .filter(song => (
+                .filter((song) => (
                     song.title.toLowerCase().includes(props.searchInput.toLowerCase()) ||
                     song.artist.toLowerCase().includes(props.searchInput.toLowerCase()) ||
                     song.album.toLowerCase().includes(props.searchInput.toLowerCase()) ||
                     song.release_date.includes(props.searchInput) ||
                     song.genre.toLowerCase().includes(props.searchInput.toLowerCase())
                     ))
-                .map((song) =>{
+                .map((song, index) =>{
                     return(
-                        <Song song={song} />
+                        <div key={index}>
+                            <Song song={song} />
+                        </div>
                         )
                 })}
-            </tbody>
-        </table>
+            </div>
+        </div>
      );
 }
  

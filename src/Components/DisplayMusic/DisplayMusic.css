@@ -1,0 +1,9 @@
+.container-fluid{
+    width: 100%;
+    padding: 5px;
+}
+.rowTitle{
+    font-weight: bold;
+    display: inline-block;
+    padding: 20 px 10 px 20px 10px;
+}

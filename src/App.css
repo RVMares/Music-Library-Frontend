@@ -1,0 +1,45 @@
+.navbar{
+    background-color: darkblue;
+    color:white;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    font-family: Helvetica, sans-serif;
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+}
+
+.navbar h3{
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: Helvetica, sans-serif;
+    display: inline-block;
+    text-decoration-line: underline overline;
+    text-decoration-color: aquamarine;
+    text-decoration-thickness: from-font;
+    font-size: 2rem;
+}
+body {
+    margin-top: 9em;
+    background-color:cornflowerblue;
+    font: 1.2em "Fira Sans", serif;
+}
+.container{
+    border: 1px;
+    border-style: solid;
+    border-color: dimgray;
+    margin:auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px rgb(24, 64, 77);
+    color:black;
+    width: 80%;
+    background-color:azure;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(129, 116, 116, 0.19);
+}

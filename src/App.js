@@ -9,7 +9,7 @@ import SearchBar from './Components/SearchBar/SearchBar'
 function App() {
 
   const [songs, setSongs] = useState([]);
-  const [searchInput, setSearchInput] = useState('');
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     getAllSongs()
@@ -49,7 +49,7 @@ function App() {
           <SearchBar searchInput={searchInput} setSearchInput={setSearchInput}/>
         </div>
         <div className='border-box'>
-          <DisplayMusic parentSongs={songs}/>
+          <DisplayMusic parentSongs={songs} searchInput={searchInput}/>
         </div>
       </div>
     </div>

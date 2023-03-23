@@ -1,17 +1,15 @@
+import './Song.css'
+
 const Song = (props) => {
-    return ( 
-        <table>
-            <tbody>
-                <tr>
-                    <td>{props.song.title}</td>
-                    <td>{props.song.artist}</td>
-                    <td>{props.song.album}</td>
-                    <td>{props.song.release_date}</td>
-                    <td>{props.song.genre}</td>
-                </tr>
-            </tbody>
-        </table>
-     );
+    return (
+        <div className='row justify-content-md-center'>
+            <div className='col'>{props.song.title}</div>
+            <div className='col'>{props.song.artist}</div>
+            <div className='col'>{props.song.album}</div>
+            <div className='col'>{props.song.release_date}</div>
+            <div className='col'>{props.song.genre}</div>
+        </div>
+    );
 }
  
 export default Song;
