@@ -1,0 +1,29 @@
+
+
+.createSongTitle{
+    align-items: center top;
+    display: grid;
+    
+}
+
+.createSong-form{
+    display: inline-block;
+    padding: 10px;
+    font-variant: small-caps;
+
+}
+.form-row{
+    margin: 0px 25px 5px 25px;
+
+}
+label{
+    margin: 0px 5px 0px 5px;
+}
+.form-control{
+    padding: 8px;
+    border: 2px solid;
+    border-color: darkcyan;
+    margin: 0px 5px 5px 0px;
+    border-radius: 5px;
+
+}

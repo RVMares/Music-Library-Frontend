@@ -1,9 +1,17 @@
 .container-fluid{
     width: 100%;
     padding: 5px;
+    display: inline-block;
 }
+
 .rowTitle{
+    font-variant: small-caps;
     font-weight: bold;
+    column-count: 5;
+}
+.col{
+
     display: inline-block;
     padding: 20 px 10 px 20px 10px;
+    margin: 5px 10px 2.5px 10px;
 }

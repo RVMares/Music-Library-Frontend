@@ -1,0 +1,10 @@
+.searchBar-form{
+    display: inline-block;
+    width:100%;
+    border: 5px;
+    border-radius: 10px;
+    border-color:darkblue;
+    padding: 5px;
+    outline: auto;
+    font-variant: small-caps;
+}

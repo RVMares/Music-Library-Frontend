@@ -6,11 +6,11 @@ const DisplayMusic = (props) => {
     return ( 
         <div className="container-fluid">
             <div className="rowTitle">
-                    <div className='col'>Title</div>
-                    <div className='col'>Artist</div>
-                    <div className='col'>Album</div>
-                    <div className='col'>Release Date</div>
-                    <div className='col'>Genre</div>
+                    <div className='col1'>Title</div>
+                    <div className='col2'>Artist</div>
+                    <div className='col3'>Album</div>
+                    <div className='col4'>Release Date</div>
+                    <div className='col5'>Genre</div>
             </div>
             <div className="row">
                 {props.parentSongs

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './CreateSong.css'
 
 const CreateSong = (props) => {
     const[title, setTitle] = useState('');
@@ -22,37 +22,36 @@ const CreateSong = (props) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
-            <div className='form-row'>
-                <div className='form-group col-md-6'>
-                    <label>Title</label>
-                    <input type='text' className='form-control' id='title' value={title} onChange={(event) => setTitle(event.target.value)}/>
+        <div className='createSongTitle'>
+            Add Song to the Library!
+            <form onSubmit={handleSubmit} className="createSong-form">
+                <div className='form-row'>
+                        <label>Title</label>
+                        <input type='text' className='form-control' id='title' value={title} onChange={(event) => setTitle(event.target.value)}/>
+
+                        <label>Artist</label>
+                        <input type='text' className='form-control' id='artist' value={artist} onChange={(event) => setArtist(event.target.value)}/>
                 </div>
-                <div className='form-group col-md-6'>
-                    <label>Artist</label>
-                    <input type='text' className='form-control' id='artist' value={artist} onChange={(event) => setArtist(event.target.value)}/>
+                <div className='form-row'>
+
+                        <label>Album</label>
+                        <input type='text' className='form-control' id='album' value={album} onChange={(event) => setAlbum(event.target.value)}/>
+
+                        <label>Release Date</label>
+                        <input type='date' className='form-control' id='release_date' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
+
                 </div>
-            </div>
-            <div className='form-row'>
-                <div className='form-group col-md-6'>
-                    <label>Album</label>
-                    <input type='text' className='form-control' id='album' value={album} onChange={(event) => setAlbum(event.target.value)}/>
+
+                    <div className='form-group col-md-6'>
+                        <label>Genre</label>
+                        <input type='text' className='form-control' id='genre' value={genre} onChange={(event) => setGenre(event.target.value)}/>
+
+                        <button type='submit' className='btn btn-primary'>Add Song!</button>
+
+
                 </div>
-                <div className='form-group col-md-6'>
-                    <label>Release Date</label>
-                    <input type='date' className='form-control' id='release_date' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
-                </div>
-            </div>
-            <div className='form-row'>
-                <div className='form-group col-md-6'>
-                    <label>Genre</label>
-                    <input type='text' className='form-control' id='genre' value={genre} onChange={(event) => setGenre(event.target.value)}/>
-                </div>
-                <div className='form-group col-md-6'>
-                    <button type='submit' className='btn btn-primary'>Add Song!</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
         );
 }
  

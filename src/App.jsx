@@ -11,6 +11,7 @@ function App() {
   const [songs, setSongs] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
+
   useEffect(() => {
     getAllSongs()
   }, []);
