@@ -22,8 +22,8 @@ const CreateSong = (props) => {
     }
 
     return ( 
-        <div className='createSongTitle'>
-            Add Song to the Library!
+        <div className='createSongTitle' id='createSongContainer'>
+            <h1>Add Song to the Library!</h1>
             <form onSubmit={handleSubmit} className="createSong-form">
                 <div className='form-row'>
                         <label>Title</label>

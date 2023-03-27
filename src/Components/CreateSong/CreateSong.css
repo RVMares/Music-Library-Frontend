@@ -1,19 +1,18 @@
 
-
 .createSongTitle{
-    align-items: center top;
-    display: grid;
-    
-}
+    position: relative;
 
+
+}
 .createSong-form{
-    display: inline-block;
+    display:inline-block;
     padding: 10px;
     font-variant: small-caps;
+    width: 75%;
 
 }
 .form-row{
-    margin: 0px 25px 5px 25px;
+    margin-bottom: 5px;
 
 }
 label{
@@ -26,4 +25,7 @@ label{
     margin: 0px 5px 5px 0px;
     border-radius: 5px;
 
+}
+tr:hover{
+    background-color: darksalmon;
 }

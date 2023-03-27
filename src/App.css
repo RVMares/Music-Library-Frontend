@@ -21,7 +21,10 @@
     
 }
 html body {
-    background-color:rgb(100, 149, 237);
+    background-image: url("http://localhost:3000//HeadphonesAndRecords.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
 }
 .container{
     border: 1px;
@@ -33,16 +36,17 @@ html body {
     border-radius: 15px;
     box-shadow: 10px 10px 5px rgb(24, 64, 77);
     color:black;
-    background-color:azure;
     text-align: center;
     font: 1.2em "Fira Sans", serif;
 }
 #container1{
     margin-top: 2em;
     width: 50%;
+    background-color:azure;
 }
 #container2{
     width: 80%;
+    background-color:azure;
 }
 
 .btn-primary:hover {
