@@ -9,7 +9,7 @@ const SearchBar = ({searchInput, setSearchInput}) => {
                 <label>Search Here!</label>
                 <input type="text" className="form-control" value={searchInput} onChange={(event) => setSearchInput(event.target.value)} />
             </div>
-            <button type="submit" className="search btn btn-primary" >Filter</button>
+            <button type="submit" className="search btn btn-primary" >Reset Filter</button>
         </form>
      );
 }

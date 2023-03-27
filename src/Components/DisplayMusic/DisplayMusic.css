@@ -1,17 +1,14 @@
-.container-fluid{
+.table{
     width: 100%;
     padding: 5px;
-    display: inline-block;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: 3px solid lightblue;
 }
 
-.rowTitle{
+.thead{
     font-variant: small-caps;
     font-weight: bold;
-    column-count: 5;
+    font: 1.2em "Fira Sans", serif;
 }
-.col{
 
-    display: inline-block;
-    padding: 20 px 10 px 20px 10px;
-    margin: 5px 10px 2.5px 10px;
-}

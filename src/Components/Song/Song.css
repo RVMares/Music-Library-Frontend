@@ -1,16 +1,14 @@
-.songRow{
-    width: 100%;
-    display:inline-block;
-    column-gap: 10px;
-    column-count: 5;
-    padding: 5px 5px 5px 5px;
+
+.tr{
+    width: 900%;
     text-align: left;
-    margin-left: 15px;
-    margin-right: 15px;
+
 }
 
-.col{
+.td{
     padding: 5px;
+    border: 1px solid;
+
 }
 button{
     background-color:darkblue;

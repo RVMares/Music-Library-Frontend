@@ -42,7 +42,7 @@ const CreateSong = (props) => {
 
                 </div>
 
-                    <div className='form-group col-md-6'>
+                    <div className='form-row'>
                         <label>Genre</label>
                         <input type='text' className='form-control' id='genre' value={genre} onChange={(event) => setGenre(event.target.value)}/>
 

@@ -40,12 +40,12 @@ function App() {
       <div className='navbar'>
         <Navbar />
       </div>
-      <div className='container'>
+      <div className='container' id='container1'>
         <div className='border-box'>
           <CreateSong createNewSong={addNewSong}/>
         </div>
       </div>
-      <div className='container'>
+      <div className='container' id='container2'>
         <div className='border-box'>
           <SearchBar searchInput={searchInput} setSearchInput={setSearchInput}/>
         </div>
